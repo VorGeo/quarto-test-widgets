@@ -1,0 +1,55 @@
+---
+title: "Test ipywidgets"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+## IntSlider
+
+```{python}
+import ipywidgets as widgets
+
+widgets.IntSlider(
+    value=7,
+    min=0,
+    max=10,
+    step=1,
+    description='Test:',
+    disabled=False,
+    continuous_update=False,
+    orientation='horizontal',
+    readout=True,
+    readout_format='d'
+)
+```
+
+## Lonboard
+
+```{python}
+import geopandas as gpd
+from shapely.geometry import Polygon
+from lonboard import Map, PolygonLayer
+
+# Create a simple rectangle polygon
+# Coordinates: (longitude, latitude)
+rectangle = Polygon([
+    (-122.5, 37.5),   # bottom-left
+    (-122.5, 38.0),   # top-left
+    (-121.5, 38.0),   # top-right
+    (-121.5, 37.5),   # bottom-right
+    (-122.5, 37.5)    # close the polygon
+])
+
+# Create GeoDataFrame with the rectangle
+gdf = gpd.GeoDataFrame({'geometry': [rectangle]}, crs='EPSG:4326')
+
+layer = PolygonLayer.from_geopandas(
+    gdf,
+    get_fill_color=[255, 0, 0],
+    get_line_color=[0, 100, 100, 150],
+)
+m = Map(layer)
+m
+```
