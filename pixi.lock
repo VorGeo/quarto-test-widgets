@@ -3736,7 +3736,7 @@ packages:
 - pypi: ./
   name: quarto-test-widgets
   version: 0.1.0
-  sha256: 5d776949ab847e66847a828b81d8dfb2f6e428436dbcfb36e1c457b40e498717
+  sha256: 7660c99b840792d81e471601fefabc956a9ce3a06c1cbe5873a0fbec96a0c131
   requires_python: '>=3.11'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/osx-arm64/re2-2025.11.05-h64b956e_0.conda
