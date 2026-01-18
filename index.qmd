@@ -32,13 +32,12 @@ import geopandas as gpd
 from shapely.geometry import Polygon
 from lonboard import Map, PolygonLayer
 
-# Create a simple rectangle polygon
+# Create a simple polygon
 # Coordinates: (longitude, latitude)
 rectangle = Polygon([
     (-122.5, 37.5),   # bottom-left
     (-122.5, 38.0),   # top-left
     (-121.5, 38.0),   # top-right
-    (-121.5, 37.5),   # bottom-right
     (-122.5, 37.5)    # close the polygon
 ])
 
