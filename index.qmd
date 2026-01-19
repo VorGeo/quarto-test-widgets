@@ -25,6 +25,16 @@ widgets.IntSlider(
 )
 ```
 
+```{python}
+caption = widgets.Label(value='The values of slider1 and slider2 are synchronized with jslink')
+sliders1, slider2 = widgets.IntSlider(description='Slider 1'),\
+                    widgets.IntSlider(description='Slider 2')
+l = widgets.jslink((sliders1, 'value'), (slider2, 'value'))
+
+display(caption, sliders1, slider2)
+```
+
+
 ## Lonboard
 
 ```{python}
