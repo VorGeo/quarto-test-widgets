@@ -33,11 +33,11 @@ from lonboard import Map, PolygonLayer
 
 gdf = gpd.read_parquet("test_ecosystem_polygons.parquet")
 
-layer1 = PolygonLayer.from_geopandas(
+layer = PolygonLayer.from_geopandas(
     gdf,
     get_fill_color=[255, 0, 0],
 )
-m1 = Map(layer1)
+m1 = Map(layer)
 m1
 ```
 
@@ -49,11 +49,7 @@ toggle = widgets.ToggleButton(
     button_style='info',
     description='Toggle Layer'
 )
-layer2 = PolygonLayer.from_geopandas(
-    gdf,
-    get_fill_color=[255, 0, 0],
-)
-m2 = Map(layer2)
+m2 = Map(layer)
 m3 = Map([])
 
 viewstate_link = widgets.jslink((m2, 'view_state'), (m3, 'view_state'))
